@@ -1,18 +1,18 @@
 {
-  "name": "redux-promise-middleware",
-  "version": "3.3.2",
-  "description": "Redux middleware for handling promises and optimistic updates",
+  "name": "redux-promise-middleware-es3",
+  "version": "3.3.2-rc0",
+  "description": "Redux middleware for handling promises and optimistic updates with ES3 support",
   "main": "dist/index.js",
   "scripts": {
     "start": "babel-node examples/server.js",
     "pretest": "npm run lint",
     "test": "make test_coverage",
     "build": "npm run build:commonjs & npm run build:umd & npm run build:umd:min",
-    "build:commonjs": "`npm bin`/babel src -d dist",
-    "build:umd": "`npm bin`/webpack dist/ReduxPromiseMiddleware.js",
-    "build:umd:min": "NODE_ENV=production `npm bin`/webpack dist/ReduxPromiseMiddleware.min.js",
+    "build:commonjs": "babel src -d dist",
+    "build:umd": "webpack dist/ReduxPromiseMiddleware.js",
+    "build:umd:min": "webpack -p dist/ReduxPromiseMiddleware.min.js",
     "prepublish": "npm test && npm run build",
-    "lint": "`npm bin`/eslint src/**/*.js examples/**/*.js test/**/*.js"
+    "lint": "eslint src/**/*.js examples/**/*.js test/**/*.js"
   },
   "repository": {
     "type": "git",
